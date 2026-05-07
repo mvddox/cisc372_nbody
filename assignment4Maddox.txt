@@ -1,10 +1,40 @@
-Script started on Wed May  6 19:46:02 2026
-]0;maddox@:~/parallel/cisc372_nbody[?1034h[maddox@r2v01 cisc372_nbody]$ make
+Script started on Wed May  6 21:06:53 2026
+]0;maddox@:~/parallel/cisc372_nbody[?1034h[maddox@r2v01 cisc372_nbody]$ make clean
+rm -f *.o nbody 
+]0;maddox@:~/parallel/cisc372_nbody[maddox@r2v01 cisc372_nbody]$ make
 nvcc -DDEBUG -c nbody.cu 
-nbody.cu(61): warning: variable "c" was declared but never referenced
+nbody.cu(62): warning: variable "c" was declared but never referenced
 
 nvcc -DDEBUG -c compute.cu 
 nvcc -DDEBUG nbody.o compute.o -o nbody -lm
+]0;maddox@:~/parallel/cisc372_nbody[maddox@r2v01 cisc372_nbody]$ ls -lrt
+total 532
+-rw-r--r-- 1 maddox ea-cisc372-silber     75 May  5 12:42 README.md
+-rw-r--r-- 1 maddox ea-cisc372-silber   1762 May  5 12:42 compute.c
+-rw-r--r-- 1 maddox ea-cisc372-silber     15 May  5 12:42 compute.h
+-rw-r--r-- 1 maddox ea-cisc372-silber    726 May  5 12:42 planets.h
+-rw-r--r-- 1 maddox ea-cisc372-silber  35752 May  5 12:43 serial.txt
+-rw-r--r-- 1 maddox everyone            3666 May  5 13:08 compute.cu.old
+-rw-r--r-- 1 maddox ea-cisc372-silber   3193 May  5 13:14 nbody.c
+-rw-r--r-- 1 maddox ea-cisc372-silber  35752 May  5 13:19 step2.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber  35752 May  5 13:23 serial2.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber  35752 May  6 12:49 step3.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber    293 May  6 18:20 makefile.old
+-rw-r--r-- 1 maddox ea-cisc372-silber    298 May  6 18:21 makefile
+-rw-r--r-- 1 maddox ea-cisc372-silber    520 May  6 19:44 config.h
+-rw-r--r-- 1 maddox ea-cisc372-silber 338975 May  6 19:46 assignment4Maddox.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber   2165 May  6 19:49 serialSmall.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber   2165 May  6 19:50 cudaSmall.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber    516 May  6 20:06 config.h.test
+-rw-r--r-- 1 maddox ea-cisc372-silber   2254 May  6 20:07 cuda1YearSmall.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber   2254 May  6 20:08 serial1YearSmall.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber    265 May  6 20:31 vector.h
+-rw-r--r-- 1 maddox ea-cisc372-silber   4110 May  6 20:33 nbody.cu
+-rw-r--r-- 1 maddox everyone            3784 May  6 20:35 compute.cu
+-rw-r--r-- 1 maddox ea-cisc372-silber      0 May  6 21:06 assignment4Maddox_2.txt
+-rw-r--r-- 1 maddox ea-cisc372-silber  10880 May  6 21:06 nbody.o
+-rw-r--r-- 1 maddox ea-cisc372-silber  24112 May  6 21:06 compute.o
+-rwxr-xr-x 1 maddox ea-cisc372-silber 752376 May  6 21:06 nbody
 ]0;maddox@:~/parallel/cisc372_nbody[maddox@r2v01 cisc372_nbody]$ srun nbody
 pos=(0.000000,0.000000,0.000000,),v=(0.000000,0.000000,0.000000,),m=1988999999999999901909255192576.000000
 pos=(57909000000.000000,0.000000,0.000000,),v=(0.000000,47360.000000,0.000000,),m=330110000000000013107200.000000
@@ -2024,8 +2054,8 @@ pos=(-603425657832264647573504.000000,-145845198687905110818816.000000,615143481
 pos=(-998967130141081433276416.000000,456521634705878359736320.000000,303671032213308488810496.000000,),v=(-3167703989539155.500000,1447620607261227.500000,962934526297980.250000,),m=489876273211965440000.000000
 pos=(-177093750344069670764544.000000,1581901749896089127878656.000000,782147532460339163561984.000000,),v=(-561560598503548.125000,5016177542795674.000000,2480173555493445.000000,),m=295822093678555496448.000000
 pos=(-332472011072407437574144.000000,451867560246156894142464.000000,-656806896676789981020160.000000,),v=(-1054261831152931.500000,1432862633961794.000000,-2082721006712257.000000,),m=456704113821826940928.000000
-This took a total time of 2.940000 seconds
+This took a total time of 1.350000 seconds
 ]0;maddox@:~/parallel/cisc372_nbody[maddox@r2v01 cisc372_nbody]$ exit
 exit
 
-Script done on Wed May  6 19:46:23 2026
+Script done on Wed May  6 21:07:14 2026
